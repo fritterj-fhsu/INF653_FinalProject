@@ -27,21 +27,6 @@ app.use((req, res) => {
     }
 });
 
-// Function to add a new state
-const addState = async () => {
-  const newState = new State({
-    stateCode: 'KS',
-    funfacts: ['Fun fact 1', 'Fun fact 2']
-  });
-
-  try {
-    const savedState = await newState.save();
-    console.log('State added:', savedState);
-  } catch (err) {
-    console.error('Error adding state:', err);
-  }
-};
-
 // Start the server
 app.listen(port, () => {
   console.log(`Server running on http://localhost:${port}`);
